@@ -1,0 +1,244 @@
+body,h1,h2,h3,figure,ul,li{
+    padding:0;
+    margin:0;
+}
+li{
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+}
+img{
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+.subtitle{
+    font-size: 14px;
+    color: #7fa9aa;
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 700;
+    @media (min-width:768px) {
+        font-size: 18px;
+    }
+}
+
+// ヘッダ
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 18px;
+    .logo{
+        font-family: 'Montserrat',sans-serif;
+        font-size: 24px;
+        font-weight: bold;   
+    }
+    .nav{
+        margin-top: 20px;
+        ul{
+            display: flex;
+            width: 196px;
+            justify-content: space-between;
+            li{ 
+                a{
+                    color: #222;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+    @media (min-width:768px) {
+        max-width: 1088px;
+        margin: 0 auto;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-top: 44px;
+        padding-bottom: 44px;
+        .nav{
+            margin-top: 0;
+            ul{
+                width: 280px;
+                li{
+                    a{
+                        font-size: 16px;
+                    }
+                }
+            }
+
+        }
+    
+    }
+}
+// フッタ
+.footer{
+    padding:{
+        top: 36px;
+        bottom: 36px;
+        left: 20px;
+    }
+    .left{
+        .logo{
+            font-family: 'Montserrat',sans-serif;
+            font-size: 24px;
+            font-weight: bold;   
+        }
+        address{
+            font-style: normal;
+            font-size: 12px;
+            margin-top: 13px;
+        }
+    }
+    .right{
+        .nav{
+            margin-top: 35px;
+            width: 260px;
+            ul{
+                display: flex;
+                justify-content: space-between;
+                li{
+                    a{
+                        font-size: 11px;
+                        color: #222;
+                    }
+                }
+            }
+        }
+        small{
+            font-size: 11px;
+        }
+    }
+    @media (min-width:768px) {
+        max-width: 1088px;
+        padding-left: 0;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .left{
+            address{
+                font-size: 12px;
+            }
+        }
+        .right{
+            text-align: right;
+            .nav{
+                margin-top: 0;
+                width: 320px;
+                ul{
+                    li{
+                        a{
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+            small{
+                font-size: 12px;
+            }
+        }
+    
+    }
+}
+// content.htmlメインイメージ
+.headerimg{
+    img{
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        @media (min-width:768px) {
+            height:393px;
+        }
+    }
+}
+// メッセージパーツmsg
+.msg{
+    background-image: url(img/wall.jpg);
+    padding-top: 92px;
+    padding-bottom: 92px;
+    text-align: center;
+    h2{
+        font-size: 24px;
+        color:#fff;
+    }
+    p{
+        font-size: 12px;
+        color: #fff;
+    }
+    @at-root .btn{
+        font-size: 16px;
+        color: white;
+        display: inline-block;
+        background-color: #f1a816;
+        padding: 10px 40px;
+        border-radius: 4px;
+        margin-top: 42px;
+        :hover{
+            background-color: #ea8c06;
+        }
+    }
+    @media (min-width:768px) {
+        h2{
+            font-size: 36px;
+        }
+        p{
+            font-size: 16px;
+        }
+        @at-root .btn{
+            font-size: 18px;
+            margin-top: 60px;
+        }    
+    }
+}
+// content.htmlメインコンテンツ
+.content{
+    margin-top: 36px;
+    h1{
+        font-size: 32px;
+        br{
+            display: none;
+        }
+    }
+    h2{
+        display:flex;
+        align-items: center;
+        // color: red;
+    }
+    h2::before{
+        content: url(img/mark.svg);
+        margin-right: 10px;
+        line-height: 1;
+        // 擬似要素をネストするとなぜか::の前に空白ができて動かなくなる
+    }
+    p{
+        font-size: 14px;
+    }
+    @media (min-width:768px) {
+        max-width: 720px;
+        margin:{
+            top: 64px;
+            right:auto;
+            bottom: 90px;
+            left:auto;
+        }
+        h1{
+            font-size: 48px;
+            br{
+                display: inline;
+            }
+        }
+        p{
+            font-size: 18px;
+            // margin-top: 40px;
+        }
+        .content-box{
+            h2{
+                font-size: 28px;
+                margin-bottom: 4opx;
+            }
+            margin-top: 90px;
+        }
+    }
+}
