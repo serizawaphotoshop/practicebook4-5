@@ -22,6 +22,14 @@ img{
         font-size: 18px;
     }
 }
+h1,h2,h3{
+    font-family: 'Noto Sans JP',sans-serif;
+}
+
+@mixin padding($value:20px){
+    padding-left: $value;
+    padding-right: $value;
+}
 
 // ヘッダ
 .header{
@@ -158,6 +166,7 @@ img{
     background-image: url(img/wall.jpg);
     padding-top: 92px;
     padding-bottom: 92px;
+    @include padding();
     text-align: center;
     h2{
         font-size: 24px;
@@ -175,8 +184,9 @@ img{
         padding: 10px 40px;
         border-radius: 4px;
         margin-top: 42px;
-        :hover{
+        &:hover{
             background-color: #ea8c06;
+            // background-color: #7fa9aa;
         }
     }
     @media (min-width:768px) {
@@ -185,6 +195,9 @@ img{
         }
         p{
             font-size: 16px;
+            max-width: 515px;
+            margin-left:auto;
+            margin-right: auto;
         }
         @at-root .btn{
             font-size: 18px;
@@ -195,7 +208,7 @@ img{
 // content.htmlメインコンテンツ
 .content{
     margin-top: 36px;
-    h1{
+    @at-root h1{
         font-size: 32px;
         br{
             display: none;
@@ -239,6 +252,170 @@ img{
                 margin-bottom: 4opx;
             }
             margin-top: 90px;
+        }
+    }
+}
+
+// index.html
+// .hero
+.hero{
+    margin-bottom: 74px;
+    img{
+        width: 100%;
+        height: 434px;
+        object-fit: cover;
+    }
+    .text{
+        margin-top:-65px;
+        @include padding();
+    }
+    @media (min-width:768px) {
+        max-width: 1088px;
+        margin-left:auto;
+        margin-right:auto;
+        display: flex;
+        flex-direction: row-reverse;
+        img{
+            height: 560px;
+        }
+        .text{
+            margin-top: 110px;
+            margin-right: -139px;
+            @include padding(0);
+
+        }
+        h1{
+            margin-top: 21px;
+            font-size: 48px;
+            font-weight: bold;
+            br{
+                display: inline;
+            }
+        }
+    }
+}
+// ご自宅からオフィスまで
+.top-msg{
+    padding-top: 110px;
+    padding-bottom: 110px;
+    @include padding;
+    background-image: url(img/plan.jpg);
+    text-align: center;
+    color: #fff;
+    box-sizing: border-box;
+    h2{
+        font-size: 24px;
+    }
+    p{
+        font-size: 12px;
+    }
+    @media (min-width:768px) {
+        max-width: 1088px;
+        margin: 0 auto;
+        // text-align: right;
+        h2{
+            max-width: 515px;
+            font-size: 36px;
+            margin-left: auto;
+            margin-right: 0;
+            text-align: left;
+        }
+        p{
+            max-width: 515px;
+            font-size: 16px;
+            margin-left: auto;
+            margin-right: 0;
+            text-align: left;
+        }
+    }
+}
+.systems{
+    margin-top: 74px;
+    margin-bottom: 74px;
+    @include padding();
+    .subtitle{
+        text-align: center;
+    }
+    h2{
+        text-align: center;
+        font-size: 22px;
+        margin-top: 18px;
+        margin-bottom: 67px;
+    }
+    .system-box{
+        margin-top: 54px;
+        figure{
+            text-align: center;
+            img{
+                height: 82px;
+                width: 82px;
+                border-radius: 50%;
+                border: 8px solid #7fa9aa;
+            }
+        }
+        .text{
+            .subtitle{
+                margin-top: 31px;
+                font-weight: normal;
+                color: #888;
+            }
+            h3{
+                margin-top: 10px;
+                margin-bottom: 20px;
+                text-align: center;
+                font-size: 20px;
+            }
+            p{
+                font-size: 14px;
+            }
+        }
+    }
+    @media (min-width:768px) {
+        margin-top: 110px;
+        margin-bottom: 110px;
+        h2{
+            text-align: center;
+            font-size: 28px;
+            margin-top: 18px;
+            margin-bottom: 67px;
+        }
+        .system-box{
+            display: flex;
+            align-items: center;
+            margin-top: 47px;
+            margin-right: auto;
+            margin-left: auto;
+            max-width: 1088px;
+            figure{
+                flex: 0 0 307px;
+                img{
+                    width: 307px;
+                    height: 307px;
+                    object-fit: cover;
+                }
+            }
+            .text{
+                max-width: 615px;
+                margin-left: 40px;
+                .subtitle{
+                    text-align: left;
+                    font-size: 14px;
+                }
+                h3{
+                    text-align: left;
+                    font-size: 24px;
+                }
+                p{
+                    // text-align: left;
+                    font-size: 16px;
+                }
+            }
+        }
+        .system-box:nth-child(even){
+            flex-direction:row-reverse;
+            .text{
+                margin-right:40px
+            }
         }
     }
 }
